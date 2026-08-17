@@ -9,4 +9,7 @@ import java.util.Optional;
 public interface AuthRepository extends JpaRepository<AuthEntity,Long> {
 
      boolean existsByUsernameAndPassword(String username, String Password);
+
+     // Este es el método que tu AuthService está buscando a gritos:
+     Optional<AuthEntity> findByUsername(String username);
 }

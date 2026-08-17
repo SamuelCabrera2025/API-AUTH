@@ -13,4 +13,7 @@ public class AuthResponseDTO {
     private Long idUsuario;
     private String token; // Aquí enviaremos el JWT
     private String rol;// Útil para que el frontend sepa qué menú mostrar (docente o estudiante)
+
+    public AuthResponseDTO(String tokenGenerado, String rol) {
+    }
 }
