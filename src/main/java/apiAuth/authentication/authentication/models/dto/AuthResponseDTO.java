@@ -1,19 +1,17 @@
 package apiAuth.authentication.authentication.models.dto;
 
-
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
+@Builder
 @AllArgsConstructor
 public class AuthResponseDTO {
 
     private Long idUsuario;
-    private String token; // Aquí enviaremos el JWT
-    private String rol;// Útil para que el frontend sepa qué menú mostrar (docente o estudiante)
-
-    public AuthResponseDTO(String tokenGenerado, String rol) {
-    }
+    private String token;
+    private String tipoToken;
+    private String rol;
+    private long expiraEnSegundos;
 }

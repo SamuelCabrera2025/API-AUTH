@@ -1,25 +1,30 @@
 package apiAuth.authentication.authentication.models.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
+@Entity
 @Table(name = "USUARIOS")
+@Getter
 @Setter
-@NotBlank
+@NoArgsConstructor
+@AllArgsConstructor
 public class AuthEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_USUARIO")
     private Long id;
-    @Column(name = "USU_EMAIL")
-    private String username;
-    @Column(name ="USU_PASSWORD", nullable = false)
+
+    @Column(name = "USU_EMAIL", nullable = false, length = 100)
+    private String email;
+
+    @Column(name = "USU_PASSWORD", nullable = false, length = 255)
     private String password;
-    @Column(name ="USU_ROL")
+
+    @Column(name = "USU_ROL", nullable = false, length = 255)
     private String rol;
 }
